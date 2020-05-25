@@ -1,18 +1,18 @@
 Curio tech exercise [![Build Status](https://cloud.drone.io/api/badges/andrewmclagan/curio-pets/status.svg)](https://cloud.drone.io/andrewmclagan/curio-pets)
 
-### Installation
+# Usage
 
-`yarn install`
+To get started simply run `yarn install` than `yarn dev` to start the development server.
 
-### Developing
+Run tests: `yarn test`, start production server: `yarn build && yarn start`.
 
-Boot development server: `yarn dev`
+CI/CD is taken care of via Drone: https://cloud.drone.io/andrewmclagan/curio-pets
 
-Run tests: `yarn test`
+Automatically builds a docker image. To run the latest docker image
 
-### Config
-
-see `.env`
+```bash
+docker run -p 3000:3000 andrewmclagan/curio-pets:latest
+```
 
 ### API
 

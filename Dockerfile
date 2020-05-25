@@ -1,5 +1,4 @@
-# Build
-FROM node:13-alpine AS BUILD_IMAGE
+FROM node:13-alpine
 
 WORKDIR /var/app
 
@@ -10,17 +9,6 @@ ADD . .
 RUN yarn install
 
 RUN yarn build
-
-# Run
-FROM node:13-alpine
-
-WORKDIR /var/app
-
-COPY --from=BUILD_IMAGE /var/app ./
-
-ARG TAG="latest"
-
-ENV PLATFORM_VER=$TAG
 
 EXPOSE 3000
 
