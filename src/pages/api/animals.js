@@ -1,7 +1,7 @@
 import { Proxy } from "../../lib/sdk";
 import chance from "../../lib/chance";
 
-const host = process.env.API_HOST;
+const host = 'https://curio-hosting.s3-ap-southeast-2.amazonaws.com';
 
 const proxy = new Proxy(host);
 

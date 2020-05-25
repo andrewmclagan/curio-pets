@@ -3,13 +3,13 @@ type: docker
 name: default
 
 steps:
-  - name: "web:test"
+  - name: test
     image: node:alpine
     commands:
       - yarn
       - yarn test
 
-  - name: "web:build"
+  - name: build
     image: plugins/docker
     settings:
       repo: andrewmclagan/curio-pets
@@ -21,4 +21,5 @@ steps:
         - latest
         - ${DRONE_TAG=${DRONE_COMMIT}}
     depends_on:
-      - "web:test"
+      - test
+
