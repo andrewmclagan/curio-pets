@@ -1,4 +1,4 @@
-Curio tech exercise
+Curio tech exercise [![Build Status](https://cloud.drone.io/api/badges/andrewmclagan/curio-pets/status.svg)](https://cloud.drone.io/andrewmclagan/curio-pets)
 
 ### Installation
 

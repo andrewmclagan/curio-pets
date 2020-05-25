@@ -1,0 +1,24 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: "web:test"
+    image: node:alpine
+    commands:
+      - yarn
+      - yarn test
+
+  - name: "web:build"
+    image: plugins/docker
+    settings:
+      repo: andrewmclagan/curio-pets
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      tags:
+        - latest
+        - ${DRONE_TAG=${DRONE_COMMIT}}
+    depends_on:
+      - "web:test"
